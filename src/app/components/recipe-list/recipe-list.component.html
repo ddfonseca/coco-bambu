@@ -1,0 +1,29 @@
+<!-- <section *ngFor="let recipe of recipes" class="wrapper"> -->
+
+<a
+    [routerLink]="['/receitas', recipe.slug]"
+    class="wrapper"
+    *ngFor="let recipe of frecipes"
+>
+    <div class="img">
+        <img src="{{ BACKEND_URL }}/{{ recipe.pictures.thumb }}" alt="Imagem" />
+        <!-- Imagem <img src="../../assets/img/prato-arroz-" alt="" /> -->
+    </div>
+    <div class="">
+        <h1 class="title">{{ recipe.name }}</h1>
+        <p class="description">
+            {{ recipe.description }}
+        </p>
+    </div>
+    <div class="circle prato" *ngIf="recipe.finished">Prato Finalizado</div>
+    <div class="circle prato" *ngIf="!recipe.finished"></div>
+    <div class="circle tempo">
+        <span>Hoje</span>
+        <span>19:32</span>
+    </div>
+    <div class="circle receita">
+        <span>Ver</span>
+        <span>Receita</span>
+    </div>
+</a>
+<!-- </section> -->

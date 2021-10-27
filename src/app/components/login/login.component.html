@@ -1,0 +1,55 @@
+<main>
+  <div class="container">
+    <section class="notification">
+      <div class="order">
+        <span class="number">1</span>
+        <span class="number--message">Novo pedido</span>
+      </div>
+      <span class="info-message">
+        Por favor, faça o login para ver o pedido e ter acesso a receita com o
+        modo de preparo.
+      </span>
+    </section>
+    <div class="logo">
+      <img src="../../../assets/img/logo-coco-bambu.png" alt="" />
+    </div>
+    <form (ngSubmit)="onLoginSubmit(loginForm)" #loginForm="ngForm">
+      <input
+        type="text"
+        id="username"
+        placeholder="Nome do usuário"
+        ngModel
+        name="username"
+        #username="ngModel"
+        required
+        (input)="onChangeInput()"
+      />
+
+      <span
+        class="error"
+        *ngIf="username.invalid && (username.dirty || username.touched)"
+        >{{ "Por favor, entre com um usuário." }}</span
+      >
+
+      <span class="error" *ngIf="!valid.username">{{
+        "Usuário incorreto."
+      }}</span>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Senha"
+        required
+        ngModel
+        name="password"
+        #password="ngModel"
+      />
+      <span
+        class="error"
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+        >{{ "Por favor, entre com uma senha." }}</span
+      >
+      <button type="submit" [disabled]="!loginForm.valid">Acessar</button>
+    </form>
+  </div>
+</main>

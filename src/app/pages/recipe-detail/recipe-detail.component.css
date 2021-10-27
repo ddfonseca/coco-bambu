@@ -1,0 +1,219 @@
+:host {
+  --height: 120px;
+  --padding: 25px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.hero {
+  position: relative;
+}
+
+.goBack {
+  position: absolute;
+  display: flex;
+  z-index: 99;
+  color: white;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.goBack--text {
+  font-size: 1.3rem;
+}
+
+.tempoDePreparo {
+  display: flex;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: clamp(0.2rem, 3vw, 1rem);
+  color: black;
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.tempoDePreparo img {
+  z-index: 1;
+  width: 50px;
+  margin-right: 20px;
+}
+
+.tempoDePreparo--info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tempoDePreparo--time {
+  margin-top: -8px;
+  font-weight: 600;
+}
+
+.info::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  margin-left: calc(var(--padding) * -1);
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.info {
+  position: absolute;
+  padding: 0 var(--padding);
+  height: var(--height);
+  padding-top: var(--padding);
+  z-index: 2;
+  transform: translateY(calc(var(--height) * -1 + var(--padding) * -1));
+  /* border: solid; */
+}
+
+img {
+  display: block;
+  width: 100%;
+  z-index: -1;
+  /* border: solid; */
+}
+
+h1 {
+  font-weight: 900;
+}
+
+.info h1,
+.info p {
+  color: white;
+}
+
+.ingredients {
+  padding: 40px var(--padding);
+  background-color: #fafafa;
+}
+
+.ingredients--list {
+  list-style: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* .ingredients--list-item .checkbox-circle {
+  transform: translateX(-10px);
+} */
+
+.checkbox-circle {
+  display: none;
+}
+
+.checkbox-label {
+  display: block;
+  cursor: pointer;
+}
+.checkbox-label::before {
+  content: "\2714";
+  display: inline-block;
+  border-radius: 50%;
+  font-size: 2rem;
+  width: 40px;
+  aspect-ratio: 1;
+  margin-right: 30px;
+  padding-top: 8px;
+  padding-left: 5px;
+  vertical-align: middle;
+  color: transparent;
+  transition: 0.2s;
+  border: 2px solid var(--text-input-brighter-color);
+}
+
+.checkbox-label:hover::before {
+  background-color: hsl(147deg, 66%, 70%);
+  border: 2px solid hsl(147deg, 66%, 70%);
+}
+
+.checkbox-label:active:before {
+  transform: scale(0);
+}
+
+.checkbox-circle:checked + .checkbox-label::before {
+  background-color: mediumseagreen;
+  border-color: mediumseagreen;
+  color: #fff;
+}
+
+.checkbox-circle:disabled + .checkbox-label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+.checkbox-circle:checked:disabled + .checkbox-labe:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+
+.modo-de-preparo {
+  padding: 0 var(--padding);
+}
+
+.modo-de-preparo h1 {
+  margin: 30px 0;
+}
+
+.modo-de-preparo--list {
+  list-style-position: inside;
+}
+
+.modo-de-preparo--list li {
+  list-style: none;
+}
+
+.modo-de-preparo--list-item + .modo-de-preparo--list-item {
+  margin-top: 40px;
+}
+/* 
+.modo-de-preparo--list li::marker {
+  content: "Passo " counter(li) "\A";
+  white-space: pre-wrap;
+  font-weight: bold;
+  display: block;
+} */
+
+.row {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+footer {
+  background-color: #f2f0f1;
+  padding: var(--padding);
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+}
+
+footer button {
+  margin-left: auto;
+  color: white;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 100px;
+  min-width: 162px;
+}
+
+footer button:hover {
+  background-color: var(--primary-darker-color);
+  cursor: pointer;
+}
+
+footer button:disabled {
+  background-color: dimgray;
+  opacity: 0.3;
+  cursor: not-allowed;
+}

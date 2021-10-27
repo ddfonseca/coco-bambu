@@ -1,0 +1,27 @@
+:root {
+  --primary-color: hsl(25deg 91% 54%);
+  --primary-darker-color: hsl(25deg 91% 45%);
+  --text-button-color: white;
+  --text-input-color: grey;
+  --text-input-brighter-color: hsl(192deg 15% 96%);
+
+  --max-width: 900px;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

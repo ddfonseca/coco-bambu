@@ -1,0 +1,14 @@
+<div class="modal-container" *ngIf="showModal">
+  <div class="modal">
+    <h3>Obrigado</h3>
+    <p>
+      Prato finalizado com sucesso <br />
+      em {{ minutes }} minutos e {{ seconds }} segundos!
+    </p>
+    <div (click)="closeModal()" class="X-button">
+      <img src="../../../assets/img/icon-close.png" alt="" srcset="" />
+    </div>
+
+    <button (click)="closeModal()">Ok</button>
+  </div>
+</div>

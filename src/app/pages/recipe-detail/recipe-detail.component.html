@@ -1,0 +1,99 @@
+<main class="container" *ngIf="recipe">
+    <section class="hero">
+        <a routerLink="/pedidos">
+            <div class="goBack">
+                <img src="../../assets/img/icon-back.png" alt="" />
+                <span class="goBack--text">Voltar</span>
+            </div>
+        </a>
+
+        <div class="tempoDePreparo">
+            <img src="../../assets/img/icon-time.png" alt="" />
+            <div class="tempoDePreparo--info">
+                <p>Tempo de preparo</p>
+                <span class="tempoDePreparo--time"
+                    >{{ recipe.time }} minutos</span
+                >
+            </div>
+        </div>
+        <img
+            src="{{ BACKEND_URL }}/{{ recipe.pictures.hero }}"
+            alt="{{ recipe.name }}"
+        />
+        <div class="info">
+            <h1>{{ recipe.name }}</h1>
+            <p>{{ recipe.description }}</p>
+        </div>
+    </section>
+
+    <section class="ingredients">
+        <h1>Ingredientes</h1>
+        <ul class="ingredients--list">
+            <ng-container
+                *ngFor="let ingredient of recipe.ingredients; index as idx"
+            >
+                <li class="ingredients--list-item">
+                    <input
+                        class="checkbox-circle"
+                        type="checkbox"
+                        [value]="idx"
+                        id="ingredient_{{ idx }}"
+                        (change)="onChangeItems($event)"
+                    />
+                    <label class="checkbox-label" for="ingredient_{{ idx }}">
+                        {{ ingredient }}
+                    </label>
+                </li>
+            </ng-container>
+        </ul>
+    </section>
+
+    <section class="modo-de-preparo">
+        <h1>Modo de Preparo</h1>
+        <ol class="modo-de-preparo--list">
+            <ng-container *ngFor="let step of recipe.steps; index as idx">
+                <li class="modo-de-preparo--list-item">
+                    <input
+                        class="checkbox-circle"
+                        type="checkbox"
+                        [value]="idx"
+                        id="step_{{ idx }}"
+                        (change)="onChangeItems($event)"
+                    />
+                    <label class="checkbox-label row" for="step_{{ idx }}">
+                        <div>
+                            <strong>Passo {{ idx + 1 }}</strong>
+                            <br />
+                            {{ step }}
+                        </div>
+                    </label>
+                </li>
+            </ng-container>
+        </ol>
+    </section>
+
+    <footer>
+        <div class="status">
+            Status <strong>{{ status }}%</strong> pronto e <br />
+            {{ minutes }} minuto(s) {{ seconds }} segundo(s) utilizado(s)
+        </div>
+        <ng-container *ngIf="showButton">
+            <button [disabled]="!checkedIngredients" (click)="startTime()">
+                Iniciar Preparação
+            </button>
+        </ng-container>
+
+        <ng-container *ngIf="!showButton">
+            <button [disabled]="!checkedSteps" (click)="endTime()">
+                Finalizar
+            </button>
+        </ng-container>
+    </footer>
+
+    <app-modal
+        [minutes]="minutes"
+        [seconds]="seconds"
+        [showModal]="showModal"
+        (showModalChange)="onModalChanged($event)"
+    ></app-modal>
+</main>

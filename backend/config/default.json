@@ -1,0 +1,11 @@
+{
+    "App": {
+        "database": {
+            "mongoUrl": "mongodb://localhost:27017/coco-bambu"
+        },
+        "logger": {
+            "enabled": true,
+            "level": "info"
+        }
+    }
+}

@@ -1,0 +1,69 @@
+:host {
+  display: block;
+  transition: 0.5s;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  gap: 10px;
+  border-bottom: 1px solid var(--text-input-brighter-color);
+}
+
+.wrapper:hover {
+  /* transform: scale(1.1, 1.1); */
+  outline: 1px solid var(--primary-color);
+  /* opacity: 0.8; */
+  border-radius: 10px;
+  /* box-shadow: 1px 1px 3px black; */
+}
+
+.wrapper:focus {
+  outline: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+.wrapper .img {
+  padding-right: 10px;
+}
+
+.info-text {
+  text-align: center;
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  /* flex-basis: 200px; */
+  flex: 0 0 90px;
+  aspect-ratio: 1;
+}
+
+.receita {
+  background-color: var(--primary-color);
+  color: var(--text-button-color);
+  font-weight: 900;
+}
+
+.tempo {
+  background-color: #eee;
+}
+
+.prato {
+  color: #a7e369;
+  font-weight: 900;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.receita:hover {
+  background-color: var(--primary-darker-color);
+  cursor: pointer;
+}

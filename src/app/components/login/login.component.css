@@ -1,0 +1,154 @@
+main {
+  background: url("../../../assets/img/img-bg-login.jpg");
+  background-repeat: no-rpeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 340px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+}
+.notification {
+  display: flex;
+  position: relative;
+  background-color: var(--text-button-color);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 10px;
+}
+
+.notification::before,
+.notification::after {
+  position: absolute;
+  content: " ";
+  top: 100%;
+  left: 50%;
+}
+
+.notification::before {
+  border: 12px solid white;
+  transform: rotate(45deg) translate(-50%);
+  margin-top: -5px;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--primary-color);
+  width: 40%;
+  /* padding: 0 1rem; */
+  height: 100%;
+  text-align: center;
+  /* align-self: flex-end; */
+  border-right: 1px solid var(--text-input-brighter-color);
+}
+
+.number {
+  font-size: 4.5rem;
+  font-weight: 900;
+  padding-bottom: 1.2rem;
+}
+
+/* .number-message {
+  display: block;
+} */
+
+.info-message {
+  font-style: italic;
+  color: var(--text-input-color);
+  padding: 0 1rem;
+  width: 60%;
+  /* border: solid; */
+}
+
+img {
+  margin: 2rem 0;
+  max-width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* width: 70%; */
+}
+
+form > *:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+form > input,
+form > button {
+  border-radius: 100px;
+}
+
+button {
+  border-radius: 0;
+  border: none;
+  padding: 0.7em 0;
+  background-color: var(--primary-color);
+  color: var(--text-button-color);
+  font-weight: 600;
+}
+
+button:hover,
+button:active {
+  background-color: var(--primary-darker-color);
+  transition: 0.5s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+}
+
+button:disabled:hover {
+  background-color: var(--primary-color);
+  cursor: not-allowed;
+}
+
+input::placeholder {
+  display: inline;
+  padding-left: 10px;
+}
+
+input {
+  color: var(--text-input-color);
+  font-style: italic;
+  border: none;
+  padding: 0.8em 0;
+  padding-left: 3.3em;
+  width: 100%;
+}
+
+#username {
+  background: url(../../../assets/img/icon-login.png) no-repeat scroll 5px;
+  background-color: white;
+}
+
+#password {
+  background: url(../../../assets/img/icon-key.png) no-repeat scroll 5px;
+  background-color: white;
+}
+
+.error {
+  color: var(--primary-darker-color);
+  /* color: #ee809d; */
+  /* color: #ff4956;
+  background-color: #ffe1e3;
+  border-left: 3px solid #ff4956;
+  padding: 10px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px; */
+}
+
+a {
+  color: white;
+}

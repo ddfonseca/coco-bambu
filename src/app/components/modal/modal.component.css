@@ -1,0 +1,66 @@
+.modal-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 50px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  animation: modal 0.3s;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.modal h3 {
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.modal p {
+  text-align: center;
+}
+
+.modal button {
+  margin-top: 30px;
+  width: 150px;
+  padding: 10px 0;
+  margin: 30px auto 0;
+  background-color: white;
+  border: 2px solid black;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.modal button:hover {
+  cursor: pointer;
+}
+
+.X-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-40px);
+  cursor: pointer;
+}
