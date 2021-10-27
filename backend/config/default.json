@@ -1,7 +1,7 @@
 {
     "App": {
         "database": {
-            "mongoUrl": "mongodb://localhost:27017/coco-bambu"
+            "mongoUrl": "mongodb+srv://cocobambu:cocobambu@cluster0.6gmjs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
         },
         "logger": {
             "enabled": true,
