@@ -11,6 +11,7 @@ O projeto utiliza o Mongodb Atlas, portanto não é necessário configurar o mon
 
 ```
 git clone https://github.com/ddfonseca/coco-bambu
+cd coco-bambu
 cd frontend
 npm install
 cd ../backend
@@ -41,7 +42,7 @@ Caso queira realizar o build do frontend:
 Volte para a pasta root:
 
 ```
-cd ../
+cd ../frontend
 npm run build:dev
 ```
 
