@@ -1,6 +1,5 @@
 ../backend/node_modules
 ../backend/dist
-../backend/angular
 ../backend/.env.development
 ../backend/.env.production
 ../backend/yarn-error.log
